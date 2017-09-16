@@ -3,6 +3,7 @@
 public class Aircraft : MonoBehaviour
 {
     public Vector2 moveBy;
+    TextMesh[] textArray;
 
     /// <summary>
     /// Initialize the Aircraft with repeating speed
@@ -11,6 +12,10 @@ public class Aircraft : MonoBehaviour
     {
         // Set the aircraft's name
         GetComponent<Aircraft>().name = RandomeName();
+        textArray = GetComponentsInChildren<TextMesh>();
+
+        textArray[0].text = RandomFL();
+        textArray[1].text = RandomSpeed();
 
         InvokeRepeating("MoveAircraft", 0, 2);
     }
@@ -23,7 +28,6 @@ public class Aircraft : MonoBehaviour
         Vector3 currentPosition = transform.position;
         Vector3 moveTo = new Vector3(currentPosition.x + moveBy.x,
                                      currentPosition.y + moveBy.y, 0);
-
     }
 
     /// <summary>
@@ -33,5 +37,15 @@ public class Aircraft : MonoBehaviour
     string RandomeName()
     {
         return "DLT" + Random.Range(0, 50).ToString();
+    }
+
+    string RandomFL()
+    {
+        return Random.Range(100, 999).ToString();
+    }
+
+    string RandomSpeed()
+    {
+        return Random.Range(100, 600).ToString();
     }
 }
