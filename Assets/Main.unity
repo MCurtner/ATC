@@ -603,8 +603,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114490750236299670, guid: 40ee7ad9366c84cbdb0263957e9b89da, type: 2}
+    - target: {fileID: 114537275562071720, guid: 40ee7ad9366c84cbdb0263957e9b89da,
+        type: 2}
+      propertyPath: arcidText
+      value: 
+      objectReference: {fileID: 226186994}
+    - target: {fileID: 114537275562071720, guid: 40ee7ad9366c84cbdb0263957e9b89da,
+        type: 2}
+      propertyPath: arcFL
+      value: 
+      objectReference: {fileID: 190002793}
+    - target: {fileID: 114537275562071720, guid: 40ee7ad9366c84cbdb0263957e9b89da,
+        type: 2}
+      propertyPath: arcSpeed
+      value: 
+      objectReference: {fileID: 1812597383}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40ee7ad9366c84cbdb0263957e9b89da, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1598643668
@@ -738,7 +752,7 @@ Camera:
   far clip plane: 10
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 16.5
   m_Depth: -10
   m_CullingMask:
     serializedVersion: 2
@@ -805,32 +819,6 @@ Prefab:
     - target: {fileID: 4002702271748802, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 212485485626304730, guid: 3f719ce33123e4c28ae8ca9db0f2df1d,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 24f6f4afce57a4d34ac07a41b484733e,
-        type: 3}
-    - target: {fileID: 4724987443973652, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724987443973652, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724987443973652, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724987443973652, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4724987443973652, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
@@ -984,24 +972,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046036098}
---- !u!1 &2047359720 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1816640941860452, guid: 40ee7ad9366c84cbdb0263957e9b89da,
-    type: 2}
-  m_PrefabInternal: {fileID: 1355435577}
---- !u!114 &2047359721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2047359720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f4701606beb749b989b7e20e8bf74e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aircraft: {fileID: 114607205602378240, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
-  spawnCount: 10
-  arcidText: {fileID: 226186994}
-  arcFL: {fileID: 190002793}
-  arcSpeed: {fileID: 1812597383}

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4804278109525492}
-  - component: {fileID: 114490750236299670}
+  - component: {fileID: 114537275562071720}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: GameController
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114490750236299670
+--- !u!114 &114537275562071720
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,3 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aircraft: {fileID: 114607205602378240, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
+  spawnCount: 10
+  arcidText: {fileID: 0}
+  arcFL: {fileID: 0}
+  arcSpeed: {fileID: 0}
