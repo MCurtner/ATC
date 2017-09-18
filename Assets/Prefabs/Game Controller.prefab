@@ -51,8 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4701606beb749b989b7e20e8bf74e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: {fileID: 0}
   aircraft: {fileID: 114607205602378240, guid: 3f719ce33123e4c28ae8ca9db0f2df1d, type: 2}
   spawnCount: 10
-  arcidText: {fileID: 0}
-  arcFL: {fileID: 0}
-  arcSpeed: {fileID: 0}

@@ -4,16 +4,31 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance;
+    public GameScreen screen;
     public Aircraft aircraft;
-
     public int spawnCount = 1;
 
-    public Text arcidText;
-    public Text arcFL;
-    public Text arcSpeed;
-
-
     List<Aircraft> aircraftList = new List<Aircraft>();
+
+    /// <summary>
+    /// Initialize any variables or game state before the game starts.
+    /// </summary>
+    void Awake()
+    {
+        // Check if there is a gamecontroller
+        if (instance == null)
+        {
+            // Set this instance to be the gamecontroller
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            // Destroy duplicate
+            Destroy(gameObject);
+        }
+    }
+
 
     /// <summary>
     /// Start this instance.
@@ -25,7 +40,6 @@ public class GameController : MonoBehaviour
         {
             SpawnAircraft();
         }
-
     }
 
     /// <summary>
@@ -33,47 +47,9 @@ public class GameController : MonoBehaviour
     /// </summary>
     void SpawnAircraft()
     {
-        // Set the intial coarse of the Aircraft.
-        aircraft.moveBy = new Vector2(1, 1);
-
-        // Instantiate a new Aircraft object at a random point on screen.
-        Aircraft clone = Instantiate(aircraft, RandomStartingPoint(), Quaternion.identity);
-
-        // Add the clone to the list.
-        aircraftList.Add(clone);
-    }
-
-    /// <summary>
-    /// Generate a random starting point for the aircraft object.
-    /// </summary>
-    /// <returns>Random Vector3 starting point.</returns>
-    Vector3 RandomStartingPoint()
-    {
-        int randomInt = Random.Range(0, 4);
-        Vector3 pos = new Vector3();
-
-        /* Use for setring starting point outside of screen
-        switch (randomInt)
-        {
-            case 0:
-                pos = new Vector3(Random.Range(-12, 12), -12);
-                break;
-            case 1:
-                pos = new Vector3(Random.Range(-12, 12), 12);
-                break;
-            case 2:
-                pos = new Vector3(-15, Random.Range(-12, 12));
-                break;
-            case 3:
-                pos = new Vector3(15, Random.Range(-12, 12));
-                break;
-        }
-        */
-
-        // Set the position anywhere within the screen boundaries
-        pos = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10));
-
-        return pos;
+        // Instantiates a new Aircraft object at a random point on screen.
+        // Add the returned aircraft to the list.
+        aircraftList.Add(aircraft.InstatiateAircraft());
     }
 
     void FixedUpdate()
@@ -118,10 +94,21 @@ public class GameController : MonoBehaviour
         // Retrieve and store the FL and Speed values.
         TextMesh[] textArray = hit.transform.gameObject.GetComponentsInChildren<TextMesh>();
 
-        // Display the values on screen
-        arcidText.text = hit.transform.gameObject.name;
-        arcFL.text = textArray[0].text;
-        arcSpeed.text = textArray[1].text;
+        // Set the on screen element values from Hit.
+        screen.arcid.text = hit.transform.gameObject.name;
+        screen.flightLevel.text = textArray[0].text;
+        screen.speed.text = textArray[1].text;
+    }
+
+
+    public void OnAscendClick()
+    {
+        Debug.Log("Ascend Button Clicked.");
+    }
+
+    public void OnDescendClick()
+    {
+        Debug.Log("Descend Button Clicked.");
     }
 }
 
