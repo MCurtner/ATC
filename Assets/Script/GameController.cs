@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
 
     Aircraft selectedAircraft;
 
-
     /// <summary>
     /// Initialize any variables or game state before the game starts.
     /// </summary>
@@ -106,7 +105,6 @@ public class GameController : MonoBehaviour
         screen.SetScreenSpeed(textArray[1].text);
     }
 
-
     public void OnAscendClick()
     {
         Debug.Log("Ascend Button Clicked.");
@@ -116,5 +114,31 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Descend Button Clicked.");
     }
+
+    /// <summary>
+    /// Destroys the aircraft.
+    /// </summary>
+    void DestroyAircraft()
+    {
+        // Only destroy the aircraft if there are aircraft to destroy.
+        if (selectedAircraft != null)
+        {
+            selectedAircraft.RemoveAircraft();
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Aircraft")
+        {
+            Debug.Log(collision.ToString());
+        }
+
+
+        Debug.Log(collision.ToString());
+    }
+
 }
 

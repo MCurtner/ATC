@@ -12,6 +12,9 @@ public class GameScreen : MonoBehaviour
     public Text speed;
     public Text flightLevel;
 
+    public Button upButton;
+    public Button downButton;
+
     void Awake()
     {
         // Check if there is a gamecontroller

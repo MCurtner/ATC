@@ -211,9 +211,20 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114734008056717902, guid: 0a530bed293a646108f49741cd3faed2,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1567322972}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a530bed293a646108f49741cd3faed2, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1567322972 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114537275562071720, guid: 40ee7ad9366c84cbdb0263957e9b89da,
+    type: 2}
+  m_PrefabInternal: {fileID: 1606345273}
+  m_Script: {fileID: 11500000, guid: 0f4701606beb749b989b7e20e8bf74e2, type: 3}
 --- !u!1001 &1606345273
 Prefab:
   m_ObjectHideFlags: 0
@@ -321,7 +332,7 @@ Camera:
   far clip plane: 10
   field of view: 60
   orthographic: 1
-  orthographic size: 16.5
+  orthographic size: 14
   m_Depth: -10
   m_CullingMask:
     serializedVersion: 2

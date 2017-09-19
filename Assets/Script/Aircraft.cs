@@ -89,4 +89,10 @@ public class Aircraft : MonoBehaviour
     {
         return Random.Range(100, 600).ToString();
     }
+
+    public void RemoveAircraft()
+    {
+        Destroy(gameObject);
+
+    }
 }
