@@ -26,4 +26,22 @@ public class GameScreen : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Setter for Aircraft ID Text
+    public void SetScreenARCID(string arcid)
+    {
+        this.arcid.text = arcid;
+    }
+
+    // Setter for Aircraft FL Text
+    public void SetScreenFL(string flightLevel)
+    {
+        this.flightLevel.text = flightLevel;
+    }
+
+    // Setter for Aircraft Speed Text
+    public void SetScreenSpeed(string speed)
+    {
+        this.speed.text = speed;
+    }
 }

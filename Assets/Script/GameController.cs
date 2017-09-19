@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour
     public Aircraft aircraft;
     public int spawnCount = 1;
 
-    List<Aircraft> aircraftList = new List<Aircraft>();
+    Aircraft selectedAircraft;
+
 
     /// <summary>
     /// Initialize any variables or game state before the game starts.
@@ -28,7 +29,6 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 
     /// <summary>
     /// Start this instance.
@@ -49,7 +49,8 @@ public class GameController : MonoBehaviour
     {
         // Instantiates a new Aircraft object at a random point on screen.
         // Add the returned aircraft to the list.
-        aircraftList.Add(aircraft.InstatiateAircraft());
+        //aircraftList.Add(aircraft.InstatiateAircraft());
+        aircraft.InstatiateAircraft();
     }
 
     void FixedUpdate()
@@ -80,7 +81,12 @@ public class GameController : MonoBehaviour
 
                 //hit.transform.position += temp;
 
-                DisplayAircraftInformationOnScreen(hit);
+                // Set the aircraft as the currentAircraft
+                selectedAircraft = hit.transform.GetComponent<Aircraft>();
+
+                // Display the information on screen
+                DisplayAircraftInformationOnScreen(selectedAircraft);
+
             }
         }
     }
@@ -89,15 +95,15 @@ public class GameController : MonoBehaviour
     /// Displays the aircraft information on screen.
     /// </summary>
     /// <param name="hit">Hit information from Raycast2D.</param>
-    void DisplayAircraftInformationOnScreen(RaycastHit2D hit)
+    void DisplayAircraftInformationOnScreen(Aircraft arc)
     {
         // Retrieve and store the FL and Speed values.
-        TextMesh[] textArray = hit.transform.gameObject.GetComponentsInChildren<TextMesh>();
+        TextMesh[] textArray = arc.GetComponentsInChildren<TextMesh>();
 
-        // Set the on screen element values from Hit.
-        screen.arcid.text = hit.transform.gameObject.name;
-        screen.flightLevel.text = textArray[0].text;
-        screen.speed.text = textArray[1].text;
+        // Set the information on screen.
+        screen.SetScreenARCID(arc.transform.name);
+        screen.SetScreenFL(textArray[0].text);
+        screen.SetScreenSpeed(textArray[1].text);
     }
 
 
